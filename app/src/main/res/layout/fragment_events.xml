@@ -6,6 +6,10 @@
     tools:context=".Events">
 
     <!-- TODO: Update blank fragment layout -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/refreshNews" >
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/eventsRecylcerView"
         android:layout_width="match_parent"
@@ -13,5 +17,7 @@
         android:layout_below="@id/youtubePlay"
         tools:layout_editor_absoluteX="745dp"
         tools:layout_editor_absoluteY="-51dp" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </FrameLayout>

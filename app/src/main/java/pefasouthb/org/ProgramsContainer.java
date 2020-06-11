@@ -1,5 +1,6 @@
 package pefasouthb.org;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import com.bumptech.glide.Glide;
@@ -29,6 +30,7 @@ public class ProgramsContainer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_programs_container);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.Maroon)));
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Programs");
 

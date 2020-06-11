@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,13 +41,15 @@ import pefasouthb.org.utils.Constants;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment implements SermonAdapter.OnSermonsListener{
+public class HomeFragment extends Fragment implements SermonAdapter.OnSermonsListener {
     //a list to store all the products
     List<Sermons> sermonsList;
+    private SwipeRefreshLayout swipeRefreshLayout;
     
 
     //the recyclerview
     private RecyclerView recyclerView;
+    SermonAdapter adapter;
     public static HomeFragment newInstance() {
         HomeFragment fragment = new HomeFragment();
         return fragment;
@@ -87,6 +92,29 @@ public class HomeFragment extends Fragment implements SermonAdapter.OnSermonsLis
                 //Toast.makeText(getActivity(), errorMessage, Toast.LENGTH_LONG).show();
                 Log.d("errorMessage:", errorMessage);
             }
+        });
+
+        // initialise swipe refresh layout
+        swipeRefreshLayout = view.findViewById(R.id.refreshSermons);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if(sermonsList != null){
+                    sermonsList.clear();
+                }
+                loadProducts();
+                adapter.notifyDataSetChanged();
+
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override public void run() {
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 2000);
+
+            }
+
+
         });
 
         //getting the recyclerview from xml
@@ -145,7 +173,7 @@ public class HomeFragment extends Fragment implements SermonAdapter.OnSermonsLis
                             }
 
                             //creating adapter object and setting it to recyclerview
-                            SermonAdapter adapter = new SermonAdapter(getContext(), sermonsList, new SermonAdapter.OnSermonsListener() {
+                             adapter = new SermonAdapter(getContext(), sermonsList, new SermonAdapter.OnSermonsListener() {
                                 @Override
                                 public void onSermonsClick(int position) {
                                     Intent intent = new Intent(getActivity(), SermonContainer.class);
@@ -175,4 +203,8 @@ public class HomeFragment extends Fragment implements SermonAdapter.OnSermonsLis
     public void onSermonsClick(int position) {
 
     }
+
+
+
+
 }

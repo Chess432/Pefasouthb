@@ -8,7 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +43,9 @@ public class ProgramsFragment extends Fragment implements ProgramsAdapter.OnProg
 
     List<Programs> programsList;
 
+    SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView recyclerView;
+    ProgramsAdapter adapter;
     public static ProgramsFragment newInstance() {
         ProgramsFragment fragment = new ProgramsFragment();
         return fragment;
@@ -58,6 +62,25 @@ public class ProgramsFragment extends Fragment implements ProgramsAdapter.OnProg
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_programs, container, false);
+
+        // initialise swipe refresh
+        swipeRefreshLayout = view.findViewById(R.id.refreshPrograms);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if(programsList != null){
+                    programsList.clear();
+                }
+                loadPrograms();
+                adapter.notifyDataSetChanged();
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override public void run() {
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 2000);
+            }
+        });
 
         recyclerView =  view.findViewById(R.id.recylcerView);
         recyclerView.setHasFixedSize(true);
@@ -111,7 +134,7 @@ public class ProgramsFragment extends Fragment implements ProgramsAdapter.OnProg
                             }
 
                             //creating adapter object and setting it to recyclerview
-                            ProgramsAdapter adapter = new ProgramsAdapter(getContext(), programsList, new ProgramsAdapter.OnProgramsListener() {
+                             adapter = new ProgramsAdapter(getContext(), programsList, new ProgramsAdapter.OnProgramsListener() {
                                 @Override
                                 public void onProgramsClick(int position) {
                                     Intent intent = new Intent(getActivity(), ProgramsContainer.class);

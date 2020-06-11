@@ -1,6 +1,7 @@
 package pefasouthb.org;
 
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import com.bumptech.glide.Glide;
@@ -34,6 +35,7 @@ public class EventContainer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_container);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.Maroon)));
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("News");
 

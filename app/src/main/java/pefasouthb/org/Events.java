@@ -3,6 +3,7 @@ package pefasouthb.org;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -39,6 +41,7 @@ import pefasouthb.org.utils.Constants;
  */
 public class Events extends Fragment implements EventsAdapter.OnEventsListener {
 
+    private SwipeRefreshLayout swipeRefreshLayout;
     private EventsAdapter adapter;
     List<Event> eventsList;
     private static final String TAG = "Events";
@@ -63,6 +66,25 @@ public class Events extends Fragment implements EventsAdapter.OnEventsListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_events, container, false);
+
+        // initialize swipe refresh layout
+        swipeRefreshLayout = view.findViewById(R.id.refreshNews);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if(eventsList != null){
+                    eventsList.clear();
+                }
+                loadEvents();
+                adapter.notifyDataSetChanged();
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override public void run() {
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 2000);
+            }
+        });
 
         //getting the recyclerview from xml
         recyclerView =  view.findViewById(R.id.eventsRecylcerView);
