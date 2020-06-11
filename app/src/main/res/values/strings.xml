@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">PEFA South B</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_home_fragment_text">This is home fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="favorite_fragment_text">This is the profile fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="events_fragment">This is Events fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="about_fragment">This is the about fragment</string>
+    <string name="about_church">About PEFA SouthB Church</string>
+
+    <string name="title_activity_slash_screen">SlashScreen</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="welcome_text">Welcome to the Official South B PEFA App</string>
+
+    <string name="sign_up">Login to your account</string>
+
+    <string name="to_do">Enter what to do</string>
+    <string name="enter_note">Enter what to do</string>
+    <string name="date">Enter what to do</string>
+
+    <string name="subject">Sample text view subject</string>
+    <string name="about_pefasb">THE .PENTECOSTAL EVANGELISTIC FELLOWSHIP OF AFRICA (P.E.F.A.)developed
+        from the partnership and merger of churches that had been founded by Elim Fellowship (formerly Elim Missionaries Assemblies,
+        who\'s Headquarters are in Lima, New York, USA and the International Pentecostal Assemblies (now known as International
+        Pentecostal Churches of Christ, who\'s Headquarters are located in London, Ohio, USA). These two missionary bodies agreed to unite
+        their churches to form the Pentecostal Evangelistic Fellowship of Africa. \n\n P.E.F.A. in essence means: a vibrant Pentecostal Church where
+        the ministry gifts of the Holy Spirit are in operation in the lives of the church members. It is an Evangelist Church, envisioned to
+        preach the Full Gospel of Jesus Christ - salvation, healing and baptism of the Holy Spirit. It is also a church where believers
+        fellowship together and recognize themselves as the very body of Jesus Christ. Last but not least, P.E.F.A. is a Continental Church
+        that has spread its wings across the Continent of Africa. As this history is being written, P.E.F.A. Church has spread its wings to
+        other countries of the world.</string>
+    <string name="title_activity_event_container">EventContainer</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_sermon_container">SermonContainer</string>
+    <string name="title_activity_programs_container">ProgramsContainer</string>
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_padding"
+        android:gravity="center"
+        android:id="@+id/linearLayoutContainer"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:padding="@dimen/normal_padding"
+            android:id="@+id/imgProgramsContainerImage"/>
+
+        <TextView
+            android:id="@+id/txtProgramsContainerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subject"
+            android:gravity="center"
+            android:padding="@dimen/normal_padding"
+            tools:ignore="MissingConstraints" />
+
+
+    </LinearLayout>
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/normal_padding"
+        android:id="@+id/wViewProgramsContainer"
+        android:layout_below="@id/linearLayoutContainer" />
+</RelativeLayout>
