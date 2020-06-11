@@ -30,6 +30,7 @@ public class ProgramsContainer extends AppCompatActivity {
         setContentView(R.layout.activity_programs_container);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Programs");
 
         initialise();
 

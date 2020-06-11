@@ -33,6 +33,7 @@ public class SermonContainer extends AppCompatActivity {
         setContentView(R.layout.activity_sermon_container);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Sermons");
 
         initialise();
         if(getIntent().hasExtra("selected_sermon")){

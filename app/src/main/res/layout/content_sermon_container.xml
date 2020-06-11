@@ -24,9 +24,11 @@
             android:id="@+id/txtSermonContainerSubject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/subject"
             android:gravity="center"
             android:padding="@dimen/normal_padding"
+            android:text="@string/subject"
+            android:textSize="18sp"
+            android:textStyle="bold"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -41,21 +43,26 @@
             android:id="@+id/txtSermonContainerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="sermon scripture"
+            android:gravity="center"
             android:padding="@dimen/normal_padding"
-            android:gravity="center" />
+            android:text="sermon scripture"
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/txtSermonContainerDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="sermon date"
+            android:background="@color/Blue"
+            android:gravity="center"
             android:padding="@dimen/normal_padding"
-            android:gravity="center" />
+            android:text="sermon date"
+            android:textColor="@color/White" />
     </LinearLayout>
+
     <WebView
+        android:id="@+id/wViewSermonContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/wViewSermonContainer"
-        android:layout_below="@id/linearLayoutContainer" />
+        android:layout_below="@id/linearLayoutContainer"
+        android:background="@color/WhiteSmoke" />
 </RelativeLayout>
