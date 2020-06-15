@@ -42,7 +42,7 @@ import pefasouthb.org.utils.Constants;
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment implements SermonAdapter.OnSermonsListener {
-    //a list to store all the products
+    //a list to store all the sermons
     List<Sermons> sermonsList;
     private SwipeRefreshLayout swipeRefreshLayout;
     
@@ -54,14 +54,6 @@ public class HomeFragment extends Fragment implements SermonAdapter.OnSermonsLis
         HomeFragment fragment = new HomeFragment();
         return fragment;
     }
-
-    private static String VIDEO_ID = "EfZutCNAibY";
-
-
-//    public HomeFragment() {
-//        // Required empty public constructor
-//    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -80,7 +72,7 @@ public class HomeFragment extends Fragment implements SermonAdapter.OnSermonsLis
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player, boolean wasRestored) {
                 if (!wasRestored) {
                     player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
-                    player.loadVideo(VIDEO_ID);
+                    player.cueVideo(Constants.VIDEO_ID);
                     player.play();
                 }
             }

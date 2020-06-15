@@ -2,6 +2,8 @@ package pefasouthb.org.adapters;
 
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import java.util.List;
 
 import pefasouthb.org.R;
 import pefasouthb.org.mappers.Sermons;
+import pefasouthb.org.utils.Constants;
 
 public class SermonAdapter extends RecyclerView.Adapter<SermonAdapter.ProductViewHolder> {
 
@@ -21,6 +24,7 @@ public class SermonAdapter extends RecyclerView.Adapter<SermonAdapter.ProductVie
     private Context mCtx;
     private List<Sermons> sermonsList;
     private OnSermonsListener mOnSermonsListener;
+    private static final String TAG = "SermonAdapter";
 
     public SermonAdapter(Context mCtx, List<Sermons> sermonsList, OnSermonsListener onSermonsListener) {
         this.mCtx = mCtx;
@@ -41,9 +45,10 @@ public class SermonAdapter extends RecyclerView.Adapter<SermonAdapter.ProductVie
 
         //loading the image
         Glide.with(mCtx)
-                .load(product.getImage())
+                .load(Constants.sermon_image_path+product.getImage())
                 .into(holder.imageView);
 
+        Log.d(TAG, "onBindViewHolder: "+Constants.sermon_image_path+product.getImage());
         holder.textViewTitle.setText(product.getSubject());
         holder.textViewShortDesc.setText(product.getText());
         holder.textViewRating.setText(String.valueOf(product.getSpeaker()));

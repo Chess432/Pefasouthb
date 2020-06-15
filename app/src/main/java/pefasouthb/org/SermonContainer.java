@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import pefasouthb.org.mappers.Sermons;
+import pefasouthb.org.utils.Constants;
 
 public class SermonContainer extends AppCompatActivity {
     private static final String TAG = "SermonContainer";
@@ -44,7 +45,7 @@ public class SermonContainer extends AppCompatActivity {
 
         }
 
-        Glide.with(this).load(sermon.getImage()).into(imageView);
+        Glide.with(this).load(Constants.sermon_image_path+sermon.getImage()).into(imageView);
         subject.setText(sermon.getSubject());
         date.setText(sermon.getDate());
         speaker.setText(sermon.getSpeaker());

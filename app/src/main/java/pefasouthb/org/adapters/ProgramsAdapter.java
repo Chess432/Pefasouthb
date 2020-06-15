@@ -15,6 +15,7 @@ import java.util.List;
 
 import pefasouthb.org.mappers.Programs;
 import pefasouthb.org.R;
+import pefasouthb.org.utils.Constants;
 
 public class ProgramsAdapter extends RecyclerView.Adapter<ProgramsAdapter.ProgramViewHolder> {
 
@@ -42,7 +43,7 @@ public class ProgramsAdapter extends RecyclerView.Adapter<ProgramsAdapter.Progra
 
         //loading the image
         Glide.with(mCtx)
-                .load(program.getPhoto())
+                .load(Constants.programs_image_path+program.getPhoto())
                 .into(holder.imageView);
 
         holder.txtName.setText(program.getName());

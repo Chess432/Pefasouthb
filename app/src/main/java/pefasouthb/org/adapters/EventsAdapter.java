@@ -17,6 +17,7 @@ import java.util.List;
 
 import pefasouthb.org.mappers.Event;
 import pefasouthb.org.R;
+import pefasouthb.org.utils.Constants;
 
 public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewHolder> {
 
@@ -45,7 +46,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
 
         //loading the image
         Glide.with(mCtx)
-                .load(event.getImage())
+                .load(Constants.events_image_path+event.getImage())
                 .into(holder.imageView);
 
         //holder.imageView.setImageResource(event.getImage());

@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import pefasouthb.org.mappers.Event;
+import pefasouthb.org.utils.Constants;
 
 public class EventContainer extends AppCompatActivity {
 
@@ -51,7 +52,7 @@ public class EventContainer extends AppCompatActivity {
         }
 
         //loading the image
-        Glide.with(this).load(event.getImage()).into(imageView);
+        Glide.with(this).load(Constants.events_image_path+event.getImage()).into(imageView);
         subject.setText(event.getSubject());
         venue.setText(event.getVenue());
         date.setText(event.getDate());

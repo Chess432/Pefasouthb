@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import pefasouthb.org.mappers.Programs;
+import pefasouthb.org.utils.Constants;
 
 public class ProgramsContainer extends AppCompatActivity {
     private static final String TAG = "ProgramsContainer";
@@ -42,7 +43,7 @@ public class ProgramsContainer extends AppCompatActivity {
             Log.d(TAG, "onCreate: "+program.toString());
         }
 
-        Glide.with(this).load(program.getPhoto()).into(imageView);
+        Glide.with(this).load(Constants.programs_image_path+program.getPhoto()).into(imageView);
         name.setText(program.getName());
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadData(program.getDescription(), "text/html", null);
