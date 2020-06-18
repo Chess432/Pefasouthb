@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     final Fragment fragment1 = new HomeFragment();
-    final Fragment fragment2 = new Favorites();
+    final Fragment fragment2 = new LoginFragment();
     final Fragment fragment3 = new Events();
     final Fragment fragment4 = new ProgramsFragment();
     final Fragment fragment5 = new AboutFragment();

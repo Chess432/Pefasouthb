@@ -11,8 +11,9 @@ public class Sermons implements Parcelable {
     private String date;
     private String scripture;
     private String image;
+    private String video_url;
 
-    public Sermons(int id, String subject, String text, String speaker, String date, String scripture, String image) {
+    public Sermons(int id, String subject, String text, String speaker, String date, String scripture, String image, String video_url) {
         this.id = id;
         this.subject = subject;
         this.text = text;
@@ -20,6 +21,7 @@ public class Sermons implements Parcelable {
         this.date = date;
         this.image = image;
         this.scripture = scripture;
+        this.video_url = video_url;
     }
 
     protected Sermons(Parcel in) {
@@ -30,6 +32,7 @@ public class Sermons implements Parcelable {
         date = in.readString();
         scripture = in.readString();
         image = in.readString();
+        video_url = in.readString();
     }
 
     public static final Creator<Sermons> CREATOR = new Creator<Sermons>() {
@@ -68,6 +71,10 @@ public class Sermons implements Parcelable {
         return scripture;
     }
 
+    public String getVideo_url() {
+        return video_url;
+    }
+
     public String getImage() {
         return image;
     }
@@ -86,5 +93,6 @@ public class Sermons implements Parcelable {
         parcel.writeString(date);
         parcel.writeString(scripture);
         parcel.writeString(image);
+        parcel.writeString(video_url);
     }
 }

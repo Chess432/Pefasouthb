@@ -160,7 +160,8 @@ public class HomeFragment extends Fragment implements SermonAdapter.OnSermonsLis
                                         product.getString("Speaker"),
                                         product.getString("date"),
                                         product.getString("scripture"),
-                                        product.getString("image")
+                                        product.getString("image"),
+                                        product.getString("video_url")
                                 ));
                             }
 
