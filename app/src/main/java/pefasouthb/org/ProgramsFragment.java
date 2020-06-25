@@ -47,8 +47,7 @@ public class ProgramsFragment extends Fragment implements ProgramsAdapter.OnProg
     private RecyclerView recyclerView;
     ProgramsAdapter adapter;
     public static ProgramsFragment newInstance() {
-        ProgramsFragment fragment = new ProgramsFragment();
-        return fragment;
+        return new ProgramsFragment();
     }
 
 

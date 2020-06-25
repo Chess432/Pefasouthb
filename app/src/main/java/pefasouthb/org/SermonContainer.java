@@ -75,16 +75,14 @@ public class SermonContainer extends YouTubeBaseActivity implements YouTubePlaye
             youTubePlayerView.setVisibility(View.GONE);
             Glide.with(this).load(Constants.sermon_image_path + sermon.getImage()).into(imageView);
             loadSermonComponents();
-
-
         }else {
             imageView.setVisibility(View.GONE);
-            loadSermonComponents();
             if (!b) {
                 youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
                 youTubePlayer.cueVideo(sermon.getVideo_url());
                 youTubePlayer.play();
             }
+            loadSermonComponents();
         }
 
 

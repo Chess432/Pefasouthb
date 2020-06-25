@@ -46,8 +46,7 @@ public class LoginFragment extends Fragment {
     private ProgressDialog dialog;
 
     public static LoginFragment newInstance() {
-        LoginFragment fragment = new LoginFragment();
-        return fragment;
+        return new LoginFragment();
     }
 
 

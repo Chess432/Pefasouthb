@@ -43,15 +43,14 @@ public class Events extends Fragment implements EventsAdapter.OnEventsListener {
 
     private SwipeRefreshLayout swipeRefreshLayout;
     private EventsAdapter adapter;
-    List<Event> eventsList;
+    private List<Event> eventsList;
     private static final String TAG = "Events";
 
 
     //the recyclerview
     private RecyclerView recyclerView;
     public static Events newInstance() {
-        Events fragment = new Events();
-        return fragment;
+        return new Events();
     }
 
 
